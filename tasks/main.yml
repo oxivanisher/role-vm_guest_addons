@@ -1,2 +1,5 @@
 ---
-# tasks file for vm_guest_addons
+
+- name: This vm virtualization role is {{ ansible_virtualization_role }}
+  ansible.builtin.import_tasks: guest.yml
+  when: ansible_virtualization_role == "guest"
