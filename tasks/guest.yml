@@ -3,3 +3,9 @@
 - name: Report current value for VM guest
   ansible.builtin.debug:
     var: ansible_virtualization_type
+
+- name: Install QEMU package
+  ansible.builtin.package:
+    name: qemu-guest-agent
+    state: present
+  when: ansible_virtualization_type == "kvm"
