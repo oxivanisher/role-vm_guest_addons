@@ -9,3 +9,5 @@
     name: qemu-guest-agent
     state: present
   when: ansible_virtualization_type == "kvm"
+  become: true
+  become_user: root
