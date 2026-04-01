@@ -1,5 +1,4 @@
 ---
-
 - name: Report current value for VM guest
   ansible.builtin.debug:
     var: ansible_facts.virtualization_type
@@ -10,4 +9,3 @@
     state: present
   when: ansible_facts.virtualization_type == "kvm"
   become: true
-  become_user: root
